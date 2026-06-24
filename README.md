@@ -19,7 +19,3 @@ See **[EM6325-advisory.md](EM6325-advisory.md)** for the complete technical deta
 ## Disclosure
 
 This advisory describes the vulnerability at the level needed for verification and remediation. It does not provide a ready-to-run exploit. Operators should isolate affected devices from the internet and apply vendor updates where available.
-
-## Author
-
-Tibo Olieslaeger
