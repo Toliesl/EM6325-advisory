@@ -1,6 +1,5 @@
 # Security Advisory: Eminent EM6325 IP Camera — Weak Credentials and Unsigned Firmware/Configuration Upload Leading to Remote Root
 
-**Researcher:** Tibo Olieslaeger
 **Affected product:** Eminent EM6325 IP camera
 **Affected firmware:** `EM6325_V11.4.5.1.5-20171227` (other versions not tested)
 **Vulnerability classes:** CWE-521 (Weak Password Requirements), CWE-307 (Improper Restriction of Excessive Authentication Attempts), CWE-494 (Download of Code Without Integrity Check)
@@ -60,34 +59,7 @@ An attacker who can reach the device's web interface can recover the admin crede
 
 A Shodan query against a string unique to this device's login page returned approximately 1,962 internet-exposed units at the time of research, concentrated in Belgium and the Netherlands. Because the underlying platform is rebranded across multiple vendors, the true exposed population is likely larger.
 
----
-
-## Remediation guidance
-
-For the vendor:
-- Require strong, high-entropy administrator passwords and force a change from any factory default on first use.
-- Implement rate limiting and lockout on authentication attempts.
-- Cryptographically sign firmware and configuration images and verify the signature on the device before applying them.
-- Use real TLS for the management interface rather than serving HTTP on port 443.
-
-For operators of affected devices:
-- Do not expose the management interface to the internet; place the camera on a segmented/isolated network.
-- Change the administrator password if the firmware permits a longer/stronger value.
-- Apply vendor firmware updates if and when a fixed version is released.
-
----
-
-## Disclosure timeline
-
-- *(Add: date the issue was discovered.)*
-- *(Add: date vendor was contacted, and via what channel.)*
-- *(Add: vendor response, or note if no response / product is end-of-life.)*
-- *(Add: date of CVE request and public disclosure.)*
-
----
 
 ## References
-
-- Full original research (bachelor thesis, *Cybersecurity Research & Testing — Internet of Things*), section "Penetration testing an IP camera."
 - CVE-2017-8224 — backdoor account in related camera firmware (distinct from this finding).
 - OWASP Internet of Things Top 10 (2018).
